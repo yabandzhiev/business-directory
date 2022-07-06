@@ -18,72 +18,81 @@ const List = () => {
   // const { status, data, error, isFetching } = useQuery("getData", getData);
 
   return (
-    <Paper sx={{ width: "80%", overflow: "hidden" }}>
-      <TableContainer
-        sx={{
-          maxHeight: 440,
-          "&::-webkit-scrollbar": {
-            width: "13px",
-          },
-          "&::-webkit-scrollbar-track": {
-            backgroundColor: "#fbfbfb",
-            borderLeft: "1px solid #dbdbdb",
-            borderRight: "1px solid #585858",
-            boxShadow: "-0.5px 0px 0px 0px  grey inset",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#bbbbbb",
-            borderRadius: "50em",
-            border: "3px solid rgba(0, 0, 0, 0)",
-            backgroundClip: "padding-box",
-          },
-        }}
-      >
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{
-                    minWidth: column.minWidth,
-                    color: "#c42172",
-                    textTransform: "uppercase",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => {
-              return (
-                <TableRow
-                  hover
-                  role="checkbox"
-                  tabIndex={-1}
-                  key={row.description}
-                >
-                  {columns.map((column) => {
-                    const value = row[column.id];
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === "number"
-                          ? column.format(value)
-                          : value}
-                      </TableCell>
-                    );
-                  })}
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
+    <div className="table">
+      <Paper sx={{ width: "90%", margin: "auto" }}>
+        <TableContainer
+          sx={{
+            maxHeight: 750,
+            "&::-webkit-scrollbar": {
+              width: "13px",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "#fbfbfb",
+              border: "1px solid #dbdbdb",
+              boxShadow: "-0.5px 0px 0px 0px  grey inset",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "#C1C3C6",
+              border: "3px solid rgba(0, 0, 0, 0)",
+              borderRadius: "50em",
+              maxHeight: "2px !important",
+              backgroundClip: "padding-box",
+            },
+          }}
+        >
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell
+                    key={column.id}
+                    align={column.align}
+                    style={{
+                      minWidth: column.minWidth,
+                      color: "#B92E80",
+                      textTransform: "uppercase",
+                      fontWeight: "bold",
+                      borderBottom: "3px solid #F8F8FA ",
+                    }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => {
+                return (
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.description}
+                  >
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell
+                          key={column.id}
+                          align={column.align}
+                          sx={{
+                            borderBottom: "3px solid #F8F8FA ",
+                          }}
+                        >
+                          {column.format && typeof value === "number"
+                            ? column.format(value)
+                            : value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </div>
   );
 };
 
