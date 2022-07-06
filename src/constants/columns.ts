@@ -7,7 +7,7 @@ interface Column {
 }
 
 export const columns: readonly Column[] = [
-  { id: "name", label: "Name", minWidth: 80 },
+  { id: "name", label: "Name", minWidth: 1 },
   { id: "description", label: "Description", minWidth: 100 },
 ];
 
