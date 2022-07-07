@@ -15,7 +15,3 @@ interface Data {
   name: string;
   description: string;
 }
-
-// function createData(name: string, description: string): Data {
-//   return { name, description };
-// }
