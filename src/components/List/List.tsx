@@ -6,6 +6,8 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 
@@ -20,7 +22,18 @@ const List = () => {
   const { status, data, error } = useQuery("getData", getData);
 
   if (status === "loading") {
-    return <span>Loading...</span>;
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          height: "92vh",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
   }
   if (status === "error" && error instanceof Error) {
     return <span>Error: {error.message}</span>;
