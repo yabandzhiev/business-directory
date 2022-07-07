@@ -1,0 +1,47 @@
+.business-item {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8fa;
+
+  .image {
+    width: 90%;
+    height: 50vh;
+    object-fit: cover;
+    margin: 50px auto 10px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+
+    .address-card,
+    .contact-card {
+      margin-top: 30px;
+    }
+  }
+  .nearby-places {
+    width: 50%;
+    background-color: white;
+    padding: 30px;
+
+    .nearbyPlace {
+      background-color: #f8f8fa;
+      margin-top: 5px;
+      padding: 10px;
+      list-style-type: none;
+      &__name {
+        margin-right: 80px;
+      }
+    }
+  }
+
+  .address-card__info,
+  .contact-card__info,
+  .nearby-places__info {
+    padding-top: 20px;
+    color: #808080;
+  }
+}
