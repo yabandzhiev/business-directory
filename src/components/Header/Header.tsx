@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/devOceanLogo.png";
 
 import "./Headers.scss";
@@ -5,7 +6,9 @@ import "./Headers.scss";
 const Header = () => {
   return (
     <div className="header">
-      <img className="logo" src={logo} alt="logo" />
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </Link>
     </div>
   );
 };
