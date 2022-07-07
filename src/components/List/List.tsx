@@ -26,10 +26,14 @@ const List = () => {
     return <span>Error: {error.message}</span>;
   }
 
-  const handleRedirect = (business: businessProps) => {
+  const handleRedirect = (
+    business: businessProps,
+    businessesList: businessProps[]
+  ) => {
     navigate(`/item/${business.id}`, {
       state: {
         business,
+        businessesList,
       },
     });
   };
@@ -87,6 +91,7 @@ const List = () => {
                         role="checkbox"
                         tabIndex={-1}
                         key={business.id}
+                        sx={{ cursor: "pointer" }}
                       >
                         {columns.map((column) => {
                           const value = business[column.id];
@@ -96,7 +101,7 @@ const List = () => {
                               style={{
                                 borderBottom: "3px solid #F8F8FA ",
                               }}
-                              onClick={() => handleRedirect(business)}
+                              onClick={() => handleRedirect(business, data)}
                             >
                               {value}
                             </TableCell>
