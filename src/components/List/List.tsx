@@ -7,12 +7,13 @@ import { useQuery } from "react-query";
 
 import { getData } from "../../api/requests";
 
-import "./List.scss";
 import TableHeader from "../Table/THeader/THeader";
 import TBody from "../Table/TBody/TBody";
 
+import "./List.scss";
+
 const List = () => {
-  const { status, data, error } = useQuery("getData", getData);
+  let { status, data, error } = useQuery("getData", getData);
 
   if (status === "loading") {
     return (
@@ -29,7 +30,7 @@ const List = () => {
     );
   }
   if (status === "error" && error instanceof Error) {
-    return <span>Error: {error.message}</span>;
+    return <h2 className="error-message">Error: {error.message}</h2>;
   }
 
   return (
