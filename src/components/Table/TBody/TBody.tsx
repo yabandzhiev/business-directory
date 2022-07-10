@@ -7,13 +7,15 @@ import { columns } from "../../../constants/columns";
 
 import { businessProps } from "../../../types/businessTypes";
 
+import "./Tbody.scss";
+
 interface dataProps {
   data: businessProps[];
 }
 
 const TBody = (props: dataProps) => {
-  const data = props.data;
   const navigate = useNavigate();
+  const data = props.data;
 
   const handleRedirect = (
     business: businessProps,
@@ -31,20 +33,18 @@ const TBody = (props: dataProps) => {
       {data.map((business) => {
         return (
           <TableRow
+            className="tableRow"
             hover
             role="checkbox"
             tabIndex={-1}
             key={business.id}
-            sx={{ cursor: "pointer" }}
           >
             {columns.map((column) => {
               const value = business[column.id];
               return (
                 <TableCell
                   key={column.id}
-                  style={{
-                    borderBottom: "3px solid #F8F8FA ",
-                  }}
+                  className="tableCell"
                   onClick={() => handleRedirect(business, data)}
                 >
                   {value}

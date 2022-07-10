@@ -4,6 +4,8 @@ import TableRow from "@mui/material/TableRow";
 
 import { columns } from "../../../constants/columns";
 
+import "./THeader.scss";
+
 const TableHeader = () => {
   return (
     <TableHead>
@@ -12,12 +14,9 @@ const TableHeader = () => {
           <TableCell
             key={column.id}
             align={column.align}
-            style={{
+            id="headings"
+            sx={{
               minWidth: column.minWidth,
-              color: "#B92E80",
-              textTransform: "uppercase",
-              fontWeight: "bolder",
-              borderBottom: "3px solid #F8F8FA ",
             }}
           >
             {column.label}

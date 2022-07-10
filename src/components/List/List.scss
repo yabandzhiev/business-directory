@@ -1,8 +1,40 @@
+.loadingScreen {
+  display: flex;
+  justify-content: center;
+  height: 92vh;
+  align-items: center;
+}
+
 .table {
   overflow: hidden;
   padding-top: 50px;
   height: 92vh;
   background-color: #f8f8fa;
+
+  .tablePaper {
+    width: 90%;
+    margin: auto;
+
+    .tableContainer {
+      max-height: 750px;
+
+      &::-webkit-scrollbar {
+        width: 13px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #fbfbfb;
+        border: 1px solid #dbdbdb;
+        box-shadow: -0.5px 0px 0px 0px grey inset;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #c1c3c6;
+        border: 3px solid rgba(0, 0, 0, 0);
+        border-radius: 50em;
+        max-height: 2px !important;
+        background-clip: padding-box;
+      }
+    }
+  }
 }
 .error-message {
   display: flex;
