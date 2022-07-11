@@ -1,7 +1,7 @@
 @import "../../constants/variables.scss";
 
 .business-item {
-  height: 100%;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   background-color: $--background-color-grey-light-dark;
@@ -50,6 +50,7 @@
 
 @media screen and (max-width: 900px) {
   .business-item {
+    height: 100%;
     .info {
       flex-wrap: wrap;
       justify-content: center;
