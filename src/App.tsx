@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-import "./App.scss";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Header from "./components/Header/Header";
 import Item from "./components/Item/Item";

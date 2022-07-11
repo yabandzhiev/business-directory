@@ -1,16 +1,7 @@
-import { getData } from "./api/requests";
-import {
-  screen,
-  render,
-  fireEvent,
-  waitFor,
-  getByText,
-} from "@testing-library/react";
-import List from "./components/List/List";
-import { MemoryRouter, Route } from "react-router-dom";
+import { screen, render, fireEvent, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import App from "./App";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { act } from "react-dom/test-utils";
 
 describe("Testing Api", () => {
   describe("Getting data", () => {
