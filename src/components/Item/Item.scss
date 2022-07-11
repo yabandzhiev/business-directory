@@ -1,8 +1,10 @@
+@import "../../constants/variables.scss";
+
 .business-item {
   height: 92vh;
   display: flex;
   flex-direction: column;
-  background-color: #f8f8fa;
+  background-color: $--background-color-grey-light-dark;
 
   .image {
     width: 90%;
@@ -24,11 +26,11 @@
   }
   .nearby-places {
     width: 50%;
-    background-color: white;
+    background-color: $--background-color-white;
     padding: 30px;
 
     .nearbyPlace {
-      background-color: #f8f8fa;
+      background-color: $--background-color-grey-light-dark;
       margin-top: 5px;
       padding: 10px;
       list-style-type: none;
@@ -42,6 +44,6 @@
   .contact-card__info,
   .nearby-places__info {
     padding-top: 20px;
-    color: #808080;
+    color: $--text-color-grey;
   }
 }

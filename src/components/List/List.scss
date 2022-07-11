@@ -1,3 +1,5 @@
+@import "../../constants/variables.scss";
+
 .loadingScreen {
   display: flex;
   justify-content: center;
@@ -9,7 +11,7 @@
   overflow: hidden;
   padding-top: 50px;
   height: 92vh;
-  background-color: #f8f8fa;
+  background-color: $--background-color-grey-light-dark;
 
   .tablePaper {
     width: 90%;
@@ -22,12 +24,12 @@
         width: 13px;
       }
       &::-webkit-scrollbar-track {
-        background-color: #fbfbfb;
-        border: 1px solid #dbdbdb;
+        background-color: $--background-color-grey;
+        border: 1px solid $--background-color-grey-light-darker;
         box-shadow: -0.5px 0px 0px 0px grey inset;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: #c1c3c6;
+        background-color: $--background-color-grey-light-darker2;
         border: 3px solid rgba(0, 0, 0, 0);
         border-radius: 50em;
         max-height: 2px !important;

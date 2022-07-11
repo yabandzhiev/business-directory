@@ -1,6 +1,8 @@
+@import "../../../constants/variables.scss";
+
 #headings {
-  color: #b92e80;
+  color: $--text-color-pink;
   text-transform: uppercase;
   font-weight: bolder;
-  border-bottom: 3px solid #f8f8fa;
+  border-bottom: 3px solid $--background-color-grey-light-dark;
 }
