@@ -1,7 +1,7 @@
 @import "../../constants/variables.scss";
 
 .business-item {
-  height: 92vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: $--background-color-grey-light-dark;
@@ -45,5 +45,27 @@
   .nearby-places__info {
     padding-top: 20px;
     color: $--text-color-grey;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .business-item {
+    .info {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+
+      & > * {
+        width: 80%;
+      }
+
+      .nearby-places {
+        margin-top: 20px;
+
+        .nearbyPlace__name {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }
