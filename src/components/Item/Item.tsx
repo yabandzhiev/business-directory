@@ -1,14 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { businessProps } from "../../types/businessTypes";
 
 import "./Item.scss";
 
 const Item = () => {
-  const { state }: any = useLocation();
+  const { id } = useParams();
 
-  const business: businessProps = state.business;
-  const businessesList: businessProps[] = state.businessesList;
+  const data = JSON.parse(localStorage.getItem("itemData") || "");
+  const selectedItem = data.find((o: businessProps) => o.id === id);
+
+  const business: businessProps = selectedItem;
+  const businessesList: businessProps[] = data;
 
   const displayNearbyPlaces = (businessesList: businessProps[]) => {
     return businessesList

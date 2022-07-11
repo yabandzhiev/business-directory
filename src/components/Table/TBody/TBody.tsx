@@ -21,12 +21,7 @@ const TBody = (props: dataProps) => {
     business: businessProps,
     businessesList: businessProps[]
   ) => {
-    navigate(`/item/${business.id}`, {
-      state: {
-        business,
-        businessesList,
-      },
-    });
+    navigate(`/item/${business.id}`);
   };
   return (
     <TableBody>

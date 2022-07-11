@@ -6,5 +6,7 @@ export const getData = async () => {
     "https://feinterviewtask.azurewebsites.net/b/6231abada703bb67492d2b8f"
   );
   const data: businessProps[] = result.data;
+  localStorage.setItem("itemData", JSON.stringify(data));
+
   return data;
 };
