@@ -22,11 +22,13 @@ const Item = () => {
         <li className="nearbyPlace" key={nearbyPlace.id}>
           <span className="nearbyPlace__name">{nearbyPlace.name}</span>
           <span className="nearbyPlace__info">
-            <span>{nearbyPlace.address.number}&nbsp;</span>
-            <span>{nearbyPlace.address.street}, &nbsp;</span>
-            <span>{nearbyPlace.address.city}, &nbsp;</span>
-            <span>{nearbyPlace.address.country} &nbsp;</span>
-            <span>{nearbyPlace.address.zip}</span>
+            <span>
+              {nearbyPlace.address.number}&nbsp;
+              {nearbyPlace.address.street}, &nbsp;
+              {nearbyPlace.address.city}, &nbsp;
+              {nearbyPlace.address.country} &nbsp;
+              {nearbyPlace.address.zip}
+            </span>
           </span>
         </li>
       ));
@@ -39,20 +41,24 @@ const Item = () => {
         <div className="address-card">
           <h2>Address</h2>
           <div className="address-card__info">
-            <span>{business?.address.number} &nbsp;</span>
-            <span>{business?.address.street}</span>
-            <br />
-            <span>{business?.address.city}, &nbsp;</span>
-            <span>{business?.address.country} &nbsp;</span>
-            <span>{business?.address.zip}</span>
+            <span>
+              {business?.address.number} &nbsp;
+              {business?.address.street}
+              <br />
+              {business?.address.city}, &nbsp;
+              {business?.address.country} &nbsp;
+              {business?.address.zip}
+            </span>
           </div>
         </div>
         <div className="contact-card">
           <h2>Contact</h2>
           <div className="contact-card__info">
-            <span>{business?.phone}&nbsp;</span>
-            <br />
-            <span>{business?.email}&nbsp;</span>
+            <span>
+              {business?.phone}&nbsp;
+              <br />
+              {business?.email}&nbsp;
+            </span>
           </div>
         </div>
         <div className="nearby-places">
