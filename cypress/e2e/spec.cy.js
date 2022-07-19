@@ -14,7 +14,7 @@ describe("homepage", () => {
     });
   });
 
-  it.only("click on second item, redirect, check route and get info about the item", () => {
+  it.only("click on second item, redirect, check route, get info about the item, click on logo and redirect to home again", () => {
     cy.get("tbody").find("tr").eq(1).click();
     cy.url().should("contain", "/item/9843406486");
 
@@ -45,5 +45,8 @@ describe("homepage", () => {
           .and("contain", "Avaveo")
           .and("contain", "Skyvu");
       });
+
+    cy.get(".header").find("a").click();
+    cy.url().should("eq", "http://localhost:3000/");
   });
 });
